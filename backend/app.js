@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 // Importa as rotas de usuário
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./src/routes/userRoutes');
 
 // Define o prefixo das rotas
 app.use('/users', userRoutes);
