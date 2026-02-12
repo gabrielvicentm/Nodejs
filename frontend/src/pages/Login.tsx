@@ -2,11 +2,8 @@
 import { useState } from 'react';
 import api from '../api';
 
-// Componente de cadastro
-function Register() {
-  // Estado para armazenar o nome
-  const [name, setName] = useState('');
-
+// Componente de login
+function Login() {
   // Estado para armazenar o email
   const [email, setEmail] = useState('');
 
@@ -19,14 +16,12 @@ function Register() {
     event.preventDefault();
 
     // Envia os dados para o backend
-    await api.post('/users/register', {
-      name: name,
+    await api.post('/users/login', {
       email: email,
       password: password,
     });
 
     // Limpa o formulário após enviar
-    setName('');
     setEmail('');
     setPassword('');
   };
@@ -34,20 +29,10 @@ function Register() {
   // JSX da tela
   return (
     <div style={{ width: '300px', margin: '50px auto' }}>
-      <h2>Cadastro de Usuário</h2>
+      <h2>Login</h2>
 
       {/* Formulário */}
       <form onSubmit={handleSubmit}>
-        
-        {/* Input de nome */}
-        <input
-          type="text"
-          placeholder="Nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <br /><br />
 
         {/* Input de email */}
         <input
@@ -70,23 +55,11 @@ function Register() {
         <br /><br />
 
         {/* Botão de envio */}
-        <button type="submit">Cadastrar</button>
-
-        <br /><br />
-
-        {/* Botão simples para ir ao login */}
-        <button
-          type="button"
-          onClick={() => {
-            window.location.href = '/login';
-          }}
-        >
-          Já tenho conta
-        </button>
+        <button type="submit">Entrar</button>
       </form>
     </div>
   );
 }
 
 // Exporta o componente
-export default Register;
+export default Login;
