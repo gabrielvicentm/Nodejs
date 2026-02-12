@@ -15,9 +15,11 @@ app.use(cors());
 
 // Importa as rotas de usuário
 const userRoutes = require('./src/routes/userRoutes');
+const loginRoutes = require('./src/routes/loginRoutes');
 
 // Define o prefixo das rotas
 app.use('/users', userRoutes);
+app.use('/users', loginRoutes); //mudar prefixo
 
 // Porta do servidor
 const PORT = 3000;
