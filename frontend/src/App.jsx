@@ -1,10 +1,14 @@
 // Importa a tela de cadastro
 import Register from './pages/Register';
+import Login from './pages/Login';
 
 // Componente principal
 function App() {
   return (
-    <Register />
+    <div>
+      <Register />
+      <Login />
+    </div>
   );
 }
 

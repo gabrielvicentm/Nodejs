@@ -16,7 +16,7 @@ function Login() {
     event.preventDefault();
 
     // Envia os dados para o backend
-    await api.post('/users/login', {
+    await api.post('/login/search', {
       email: email,
       password: password,
     });

@@ -19,7 +19,7 @@ const loginRoutes = require('./src/routes/loginRoutes');
 
 // Define o prefixo das rotas
 app.use('/users', userRoutes);
-app.use('/users', loginRoutes); //mudar prefixo
+app.use('/login', loginRoutes); //mudar prefixo
 
 // Porta do servidor
 const PORT = 3000;
